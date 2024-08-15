@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Security Logging Demo</h1>
+    <p>This application demonstrates security logging in an ASP.NET Core application.</p>
+    
+    @if (User.Identity.IsAuthenticated)
+    {
+        <p>You are logged in. You can now:</p>
+        <ul>
+            <li><a asp-controller="HealthcareInfo" asp-action="Index">Manage your Healthcare Information</a></li>
+            <li><a asp-controller="SecurityLog" asp-action="Index">View Security Logs</a></li>
+        </ul>
+    }
+    else
+    {
+        <p>Please <a asp-controller="Account" asp-action="Login">log in</a> or <a asp-controller="Account" asp-action="Register">register</a> to access the application features.</p>
+    }
+</div>
